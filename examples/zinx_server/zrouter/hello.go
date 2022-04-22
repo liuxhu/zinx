@@ -1,9 +1,9 @@
 package zrouter
 
 import (
-	"github.com/aceld/zinx/ziface"
-	"github.com/aceld/zinx/zlog"
-	"github.com/aceld/zinx/znet"
+	"github.com/liuxhu/zinx/ziface"
+	"github.com/liuxhu/zinx/zlog"
+	"github.com/liuxhu/zinx/znet"
 )
 
 type HelloZinxRouter struct {
@@ -21,4 +21,3 @@ func (this *HelloZinxRouter) Handle(request ziface.IRequest) {
 		zlog.Error(err)
 	}
 }
-

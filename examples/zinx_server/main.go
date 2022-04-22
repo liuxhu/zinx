@@ -7,12 +7,11 @@
 package main
 
 import (
-	"github.com/aceld/zinx/examples/zinx_server/zrouter"
-	"github.com/aceld/zinx/ziface"
-	"github.com/aceld/zinx/zlog"
-	"github.com/aceld/zinx/znet"
+	"github.com/liuxhu/zinx/examples/zinx_server/zrouter"
+	"github.com/liuxhu/zinx/ziface"
+	"github.com/liuxhu/zinx/zlog"
+	"github.com/liuxhu/zinx/znet"
 )
-
 
 //创建连接的时候执行
 func DoConnectionBegin(conn ziface.IConnection) {
@@ -21,7 +20,7 @@ func DoConnectionBegin(conn ziface.IConnection) {
 	//设置两个链接属性，在连接创建之后
 	zlog.Debug("Set conn Name, Home done!")
 	conn.SetProperty("Name", "Aceld")
-	conn.SetProperty("Home", "https://www.kancloud.cn/@aceld")
+	conn.SetProperty("Home", "https://www.kancloud.cn/@liuxhu")
 
 	err := conn.SendMsg(2, []byte("DoConnection BEGIN..."))
 	if err != nil {

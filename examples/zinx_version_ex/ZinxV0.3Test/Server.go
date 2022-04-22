@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/aceld/zinx/ziface"
-	"github.com/aceld/zinx/znet"
+	"github.com/liuxhu/zinx/ziface"
+	"github.com/liuxhu/zinx/znet"
 )
 
 //ping test 自定义路由

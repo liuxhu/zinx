@@ -1,9 +1,9 @@
 package zrouter
 
 import (
-	"github.com/aceld/zinx/ziface"
-	"github.com/aceld/zinx/zlog"
-	"github.com/aceld/zinx/znet"
+	"github.com/liuxhu/zinx/ziface"
+	"github.com/liuxhu/zinx/zlog"
+	"github.com/liuxhu/zinx/znet"
 )
 
 //ping test 自定义路由

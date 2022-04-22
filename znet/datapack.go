@@ -5,8 +5,7 @@ import (
 	"encoding/binary"
 	"errors"
 
-	"github.com/aceld/zinx/utils"
-	"github.com/aceld/zinx/ziface"
+	"github.com/liuxhu/zinx/ziface"
 )
 
 var defaultHeaderLen uint32 = 8
@@ -67,7 +66,7 @@ func (dp *DataPack) Unpack(binaryData []byte) (ziface.IMessage, error) {
 	}
 
 	//判断dataLen的长度是否超出我们允许的最大包长度
-	if utils.GlobalObject.MaxPacketSize > 0 && msg.DataLen > utils.GlobalObject.MaxPacketSize {
+	if defaultMaxPacketSize > 0 && msg.DataLen > defaultMaxPacketSize {
 		return nil, errors.New("too large msg data received")
 	}
 

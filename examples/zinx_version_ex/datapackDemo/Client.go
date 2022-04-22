@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/aceld/zinx/znet"
+	"github.com/liuxhu/zinx/znet"
 )
 
 func main() {

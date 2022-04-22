@@ -5,7 +5,7 @@ import (
 	"io"
 	"net"
 
-	"github.com/aceld/zinx/znet"
+	"github.com/liuxhu/zinx/znet"
 )
 
 //只是负责测试datapack拆包，封包功能

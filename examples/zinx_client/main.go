@@ -6,7 +6,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/aceld/zinx/znet"
+	"github.com/liuxhu/zinx/znet"
 )
 
 /*

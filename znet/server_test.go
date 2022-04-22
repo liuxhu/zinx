@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/aceld/zinx/ziface"
+	"github.com/liuxhu/zinx/ziface"
 )
 
 // run in terminal:
@@ -140,7 +140,7 @@ func DoConnectionLost(conn ziface.IConnection) {
 
 func TestServer(t *testing.T) {
 	//创建一个server句柄
-	s := NewServer()
+	s := NewServer(nil)
 
 	//注册链接hook回调函数
 	s.SetOnConnStart(DoConnectionBegin)
@@ -164,7 +164,7 @@ func TestServer(t *testing.T) {
 }
 
 func TestServerDeadLock(t *testing.T) {
-	s := NewServer()
+	s := NewServer(nil)
 
 	s.Start()
 	time.Sleep(time.Second * 1)
@@ -199,7 +199,7 @@ func (br *CloseConnectionBeforeSendMsgRouter) Handle(req ziface.IRequest) {
 }
 
 func TestCloseConnectionBeforeSendMsg(t *testing.T) {
-	s := NewServer()
+	s := NewServer(nil)
 	s.AddRouter(1, &CloseConnectionBeforeSendMsgRouter{})
 
 	s.Start()
