@@ -18,13 +18,13 @@ type Client struct {
 }
 
 // NewClient 新建一个客户端对象
-func NewClient(cOpts []ClientOption, opts ...Option) ziface.IClient {
+func NewClient(is ziface.IService, opts ...ClientOption) ziface.IClient {
 	c := &Client{
-		IService:       NewBaseService(opts...),
+		IService:       is,
 		reconnectCount: 0,
 	}
 
-	for _, opt := range cOpts {
+	for _, opt := range opts {
 		opt(c)
 	}
 
@@ -53,6 +53,9 @@ func (c *Client) Start() {
 
 // Serve ...
 func (c *Client) Serve() {
+	// 启动worker工作池机制
+	c.MsgHandler().StartWorkerPool()
+
 	addr, err := net.ResolveTCPAddr(c.IPVersion(), c.Addr())
 	if err != nil {
 		fmt.Println("resolve tcp addr err: ", err)

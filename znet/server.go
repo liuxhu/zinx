@@ -32,14 +32,14 @@ type Server struct {
 }
 
 // NewServer 创建一个服务器句柄
-func NewServer(sOpts []ServerOption, opts ...Option) ziface.IServer {
+func NewServer(is ziface.IService, opts ...ServerOption) ziface.IServer {
 	s := &Server{
-		IService: NewBaseService(opts...),
+		IService: is,
 		ConnMgr:  NewConnManager(),
 		maxConn:  defaultMaxConn,
 	}
 
-	for _, opt := range sOpts {
+	for _, opt := range opts {
 		opt(s)
 	}
 
